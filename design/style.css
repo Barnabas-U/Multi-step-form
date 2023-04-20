@@ -1,0 +1,942 @@
+body {
+    background-color: hsl(217, 100%, 97%);
+    width: 100%;
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.mobile-steps {
+    display: none;
+}
+
+.back {
+  cursor: pointer;
+}
+
+.next {
+  cursor: pointer;
+}
+
+td > p {
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 305px) {
+    body {
+        background-image: url(images/bg-sidebar-mobile.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+
+    main {
+        width: 100%
+    }
+    .container {
+      justify-content: space-between;
+    }
+
+    .side-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.4em;
+    }
+
+    .side-steps {
+        display: none;
+    }
+
+    .mobile-steps {
+        display: flex;
+        width: 60%;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .mobile-steps > h3 {
+        color: hsl(0, 0%, 100%);
+        width: 2em;
+        height: 2em;
+        border: 0.05em solid hsl(0, 0%, 100%);
+        border-radius:50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #step-1 {
+      display: block;
+    }
+
+    .steps {
+        width: 85%;
+        background-color: hsl(0, 0%, 100%);
+        margin: auto;
+        border-radius: 10px;
+        padding: .5em;
+    }
+
+    .steps > div {
+        margin: 1em;
+    }
+
+    .header > h1 {
+        color: hsl(213, 96%, 18%);
+        margin-bottom: -0.3em;
+        font-size: 1.65em;
+    }
+
+    .header > p {
+        color: hsl(231, 11%, 63%);
+        font-size: large;
+    }
+
+    .steps > div > input {
+      width: 100%;
+      height: 3em;
+      border: 1px solid hsl(229, 24%, 87%);
+      border-radius: 3px;
+    }
+
+    .steps > div > input::placeholder {
+        color: hsl(231, 11%, 63%);
+        font-size:1.2em;
+        font-weight: 500;
+        font-family: 'Ubuntu', sans-serif;
+        padding-left: 1em;
+    }
+
+    .input-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .input-top > p {
+        margin: 0;
+        font-size: small;
+        font-weight: 400;
+        color: hsl(354, 84%, 57%);
+    }
+
+    .in-input:focus {
+      outline-color: hsl(243, 100%, 62%);
+    }
+
+    label {
+        color: hsl(213, 96%, 18%);
+        font-weight: bold;
+    }
+
+    .button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+        position: fixed;
+        bottom: 0;
+    }
+
+    .button > h3 {
+        font-size: small;
+        font-weight: 400;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    .next {
+        color: hsl(231, 11%, 93%);
+        background-color: hsl(213, 96%, 18%);
+        padding: 1em;
+        border-radius: 0.5em;
+    }
+
+    .back {
+        color: hsl(231, 11%, 73%);
+    }
+
+    #step-2, #step-3, #step-4 {
+        display: none;
+    }
+
+    /*step 2*/
+    .plan {
+        display: flex;
+        margin: 0;
+        padding: 0.3em;
+        padding-left: 0.7em;
+        border: 0.1em solid hsl(231, 11%, 93%);
+        border-radius: 0.5em;
+    }
+
+    .plan > img {
+        height: 2.5em;
+        margin-top: 0.5em;
+    }
+
+    .plan > div > h4, .plan > div > h5 {
+        margin: .5em;
+    }
+
+    .plan > div > h4 {
+        color: hsl(213, 96%, 20%);
+    }
+
+    .plan > div > h5 {
+        color: hsl(231, 11%, 73%);
+    }
+
+    #free1, #free2, #free3 {
+      display: none;
+      color: hsl(213, 96%, 38%);
+    }
+
+    .toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color: hsl(217, 100%, 97%);
+        border-radius: 0.6em;
+        height: 3em;
+    }
+
+    /* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsl(213, 96%, 18%);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: hsl(213, 96%, 18%);
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px hsl(213, 96%, 18%);
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .option-box {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: .5em;
+    margin-bottom: 1em;
+    padding: 1em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    border: 0.1em solid hsl(231, 11%, 73%);
+    border-radius: 0.5em;
+  }
+
+  #sub1, #sub2, #sub3 {
+    font-weight: 500;
+    color: hsl(243, 100%, 62%);
+    position: absolute;
+    right: 1em;
+  }
+
+  #checkbox-1, #checkbox-2, #checkbox-3 {
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 1em;
+  }
+
+  .option-box > div > h5 {
+    margin: 0.2em;
+  }
+
+  .alert {
+    display: none;
+    color: hsl(354, 84%, 57%);
+  }
+
+  #yearly {
+    color: lightgrey;
+  }
+
+  #monthly {
+    color: darkblue;
+  }
+  .p1 {
+    font-size: medium;
+    color: hsl(213, 96%, 20%);
+  }
+
+  .p2 {
+    font-size: small;
+    font-weight: 500;
+    color: hsl(231, 11%, 63%);
+  }
+
+  /* step 4 */
+  table {
+    width: 100%;
+    background-color: hsl(217, 100%, 97%);
+    border-radius: .5em;
+    padding: 1em;
+  }
+
+  tr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    
+  }
+
+  th {
+    display: block;
+    color: hsl(213, 96%, 18%);
+  }
+
+  th > div > p {
+    margin: 0;
+    padding: 0;
+  }
+
+  th > div {
+    display: flex;
+    flex-direction: row;
+  }
+
+  th > a {
+    color: hwb(232 70% 24%);
+    
+  }
+
+  .mo-area {
+    display: flex;
+  }
+
+  .mo {
+    display: flex;
+    font-weight: 500;
+    color: hsl(213, 96%, 20%);
+  }
+
+  .line {
+    background-color: hsl(231, 11%, 73%);
+    width: 100%;
+    height: 0.01em;
+  }
+
+  #total {
+    color: hsl(231, 11%, 73%);
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 0;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #total > div {
+    display: flex;
+    color: hsl(243, 100%, 62%);
+  }
+
+  .td1 {
+    color: hsl(231, 11%, 73%);
+  }
+
+  #next-4 {
+    background-color: hsl(243, 100%, 62%);
+  }
+
+  /* thank you message */
+
+  #final {
+    padding-top: 5em;
+    padding-bottom: 5em;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #final > img {
+    width: 3em;
+  }
+
+  #final > h1 {
+    margin-bottom: 0;
+    font-size: x-large;
+    color: hsl(213, 96%, 20%);
+  }
+
+  #final > p {
+    margin-top: 1em;
+    width: 95%;
+    color: hsl(231, 11%, 73%);
+    text-align: center;
+  }
+
+}
+
+@media (min-width: 768px) {
+    .container {
+      max-width: 768px;
+      position: relative;
+      margin-top: 5%;
+      margin-left: 0em;
+    }
+  
+    body {
+      background-image: unset;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  
+    #container {
+      background-color: hsl(0, 0%, 100%);
+      display: flex;
+      width: 70%;
+      height: 70vh;
+      margin-top: 7%;
+      margin-bottom: 7%;
+      margin-left: 15%;
+    }
+  
+    .side-bar {
+      background-image: url(images/bg-sidebar-desktop.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 40%;
+      height: 90%;
+      border-radius: 0.5em;
+      margin-right: 0;
+      margin: 1em;
+      display: block;
+      align-items: unset;
+      justify-content: unset;
+      margin-bottom: unset;
+    }
+    .side-steps {
+      display: flex;
+      margin: 0;
+    }
+  
+    .steps-1 > h2 {
+      color: hsl(0, 0%, 100%);
+      width: 1em;
+      height: 1em;
+      padding: 0.5em;
+      margin-right: 1em;
+      margin-left: 1em;
+      margin-top: 1em;
+      font-size: small;
+      border: 0.05em solid hsl(0, 0%, 100%);
+      border-radius:50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .steps-2 {
+      padding: 0;
+    }
+  
+    .steps-2 > h3 {
+      font-size: small;
+      margin: 0;
+      font-weight: 600;
+      color: hsl(0, 0%, 100%);
+    }
+  
+    .steps-2 > h4 {
+      font-size: x-small;
+      margin-bottom: 0;
+      font-weight: 800;
+      color: hsl(231, 11%, 73%);
+    }
+  
+    .mobile-steps {
+      display: none;
+    }
+  
+    #step-1 {
+      display: block;
+      margin-top: 0;
+      width: 95%;
+      height: 95%;
+    }
+  
+    .steps > div {
+      margin-bottom: 1em;
+    }
+  
+    .header > h1 {
+    color: hsl(213, 96%, 25%);
+    margin-bottom: -0.3em;
+    font-size: x-large;
+    }
+  
+  .header > p {
+    color: hsl(231, 11%, 73%);
+    font-size: small;
+  }
+   
+  .steps > div > input {
+    margin-top: 0.5em;
+    width: 100%;
+    height: 2em;
+    border: 1px solid hsl(229, 24%, 87%);
+    border-radius: 3px;
+  }
+  
+  label {
+    color: hsl(213, 96%, 25%);
+    font-weight: bold;
+  }
+  
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 83%;
+    margin-left: 8%;
+    margin-top: 2em;
+    position: absolute;
+  }
+  
+  .next {
+    color: hsl(231, 11%, 73%);
+    background-color: hsl(213, 96%, 18%);
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    border-radius: 0.5em;
+    letter-spacing: .1em;
+  }
+  
+  #step-2, #step-3, #step-4 {
+    display: none;
+    margin-top: 0;
+    
+  }
+  
+  .step-2 > .header { grid-area: header; }
+  .step-2 > .arcade { grid-area: arcade; }
+  .step-2 > .advance { grid-area: advance; }
+  .step-2 > .pro { grid-area: pro; }
+  .step-2 > .toggle { grid-area: toggle; }
+  
+  #step-2 {
+    height: 95%;
+    width: 100%;
+  }
+  
+  .step-2 {
+    width: 80%;
+    margin-left: 2em;
+    display: inline-grid;
+    grid-template-areas: 
+      'header header header'
+      'arcade advance pro'
+      'toggle toggle toggle';
+    column-gap: 0em;
+  }
+  
+  .step-2 > .header {
+    margin-bottom: 0;
+  }
+  
+  .plan {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+    margin: 0;
+    padding: 0.3em;
+    padding-left: 0.7em;
+    border: 0.1em solid hsl(231, 11%, 93%);
+    border-radius: 0.5em;
+    cursor: pointer;
+  }
+  
+  .plan > img {
+    height: 2em;
+    margin-top: 0.5em;
+    margin-bottom: .5em;
+  }
+  
+  .plan > div > h4 {
+    font-size: medium;
+    font-weight: 900;
+    color: hsl(213, 96%, 38%);
+  }
+
+  .plan > div > h5 {
+    font-size: small;
+  }
+
+  .advance:hover, .arcade:hover, .pro:hover {
+    border-color: hsl(213, 96%, 38%);
+    background-color: hsl(217, 100%, 97%);
+  }
+
+  .back:hover {
+    font-weight: 900;
+    color: hsl(213, 96%, 25%);
+  }
+
+  .next:hover {
+    color: aliceblue;
+  }
+  
+  .toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    background-color: hsl(217, 100%, 97%);
+    border-radius: 0.6em;
+    height: 3em;
+  }
+  
+  #step-3 {
+    height: 95%;
+  }
+
+  .option-box {
+    cursor: pointer;
+    height: 2em;
+  }
+  .option-box:hover {
+    border-color: hsl(213, 96%, 25%);
+    background-color: hsl(217, 100%, 97%);
+  }
+  
+  #step-4 {
+    height: 95%;
+  }
+
+  tr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    
+  }
+
+  .attribution {
+    margin-top: -5em;
+  }
+
+  #final {
+    padding-top: 2em;
+    padding-bottom: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+  }
+  
+  #final > img {
+    width: 5em;
+  }
+  
+  #final > h1 {
+    margin-bottom: 0;
+    font-size:2.5em;
+    color: hsl(213, 96%, 20%);
+  }
+  
+  #final > p {
+    margin-top: 0em;
+    font-size: larger;
+    width: 90%;
+    color: hsl(231, 11%, 83%);
+    text-align: center;
+  }
+}
+
+@media (min-width: 1276px) {
+
+  .container {
+    max-width: 1276px;
+    position: relative;
+    margin-top: 5%;
+  }
+
+  .attribution {
+    margin-top: -5em;
+  }
+
+  body {
+    background-image: unset;
+  }
+
+  #container {
+    background-color: hsl(0, 0%, 100%);
+    display: flex;
+    width: 70%;
+    height: 70vh;
+    margin-top: 7%;
+    margin-bottom: 7%;
+    margin-left: 15%;
+  }
+
+  .side-bar {
+    background-image: url(images/bg-sidebar-desktop.svg);
+    width: 40%;
+    height: 95%;
+    border-radius: 1em;
+    margin: 1em;
+    display: block;
+    align-items: unset;
+    justify-content: unset;
+    margin-bottom: unset;
+  }
+  .side-steps {
+    display: flex;
+    margin: 0;
+  }
+
+  .steps-1 > h2 {
+    color: hsl(0, 0%, 100%);
+    width: 1em;
+    height: 1em;
+    padding: 0.5em;
+    margin-right: 1em;
+    margin-left: 1em;
+    margin-top: 1.5em;
+    font-size: medium;
+    border: 0.05em solid hsl(0, 0%, 100%);
+    border-radius:50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .steps-2 {
+    padding: 0;
+  }
+
+  .steps-2 > h3 {
+    margin: 0;
+    font-weight: 400;
+    color: hsl(0, 0%, 100%);
+  }
+
+  .steps-2 > h4 {
+    margin-bottom: 0;
+    font-weight: 400;
+    color: hsl(231, 11%, 73%);
+  }
+
+  .mobile-steps {
+    display: none;
+  }
+
+  #step-1 {
+    display: block;
+    margin-top: 5%;
+    width: 95%;
+    height: 85%;
+  }
+
+  .steps > div {
+    margin-bottom: 2em;
+  }
+
+  .header > h1 {
+  color: hsl(213, 96%, 25%);
+  margin-bottom: -0.3em;
+  font-size: 1.65em;
+  }
+
+.header > p {
+  color: hsl(231, 11%, 73%);
+  font-size: medium;
+}
+ 
+.steps > div > input {
+  margin-top: 0.5em;
+  width: 100%;
+  height: 3em;
+  border: 1px solid hsl(229, 24%, 87%);
+  border-radius: 3px;
+}
+
+label {
+  color: hsl(213, 96%, 25%);
+  font-weight: bold;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 83%;
+  margin-left: 8%;
+  margin-top: 2em;
+  position: absolute;
+}
+
+.next {
+  color: hsl(231, 11%, 73%);
+  background-color: hsl(213, 96%, 18%);
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  border-radius: 0.5em;
+  letter-spacing: .1em;
+}
+
+#step-2, #step-3, #step-4 {
+  display: none;
+  
+}
+
+.step-2 > .header { grid-area: header; }
+.step-2 > .arcade { grid-area: arcade; }
+.step-2 > .advance { grid-area: advance; }
+.step-2 > .pro { grid-area: pro; }
+.step-2 > .toggle { grid-area: toggle; }
+
+#step-2 {
+  height: 90%;
+  width: 100%;
+}
+
+.step-2 {
+  width: 80%;
+  margin-left: 3em;
+  display: inline-grid;
+  grid-template-areas: 
+    'header header header'
+    'arcade advance pro'
+    'toggle toggle toggle';
+  column-gap: 0em;
+}
+
+.step-2 > .header {
+  margin-bottom: 0;
+}
+
+.plan {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+  margin: 0;
+  padding: 0.3em;
+  padding-left: 0.7em;
+  border: 0.1em solid hsl(231, 11%, 93%);
+  border-radius: 0.5em;
+}
+
+.plan > img {
+  height: 2.2em;
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+}
+
+.plan > div > h4 {
+  color: hsl(213, 96%, 38%);
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 97%;
+  background-color: hsl(217, 100%, 97%);
+  border-radius: 0.6em;
+  height: 3em;
+}
+
+#step-3 {
+  height: 90%;
+}
+
+#step-4 {
+  height: 90%;
+}
+
+#final {
+  padding-top: 10em;
+  padding-bottom: 5em;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+#final > img {
+  width: 5em;
+}
+
+#final > h1 {
+  margin-bottom: 0;
+  font-size:2.5em;
+  color: hsl(213, 96%, 20%);
+}
+
+#final > p {
+  margin-top: 1em;
+  font-size: larger;
+  width: 90%;
+  color: hsl(231, 11%, 83%);
+  text-align: center;
+}
+
+}

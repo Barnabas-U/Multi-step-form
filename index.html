@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="design/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Multi-step form</title>
+  <link rel="stylesheet" href="/design/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    #link-link { display: none; }
+    .attribution { font-size: 11px; text-align: center; margin-top: 1em; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div id="container">
+    <!-- Sidebar start -->
+    <div class="side-bar container">
+      <div class="side-steps">
+        <div class="steps-1"><h2 id="steps-1">1</h2></div>
+        <div class="steps-2">
+          <h4>STEP 1</h4>
+          <h3>YOUR INFO</h3>
+        </div>
+      </div>
+    
+      <div class="side-steps">
+        <div class="steps-1"><h2 id="steps-2">2</h2></div>
+        <div class="steps-2">
+          <h4>STEP 2</h4>
+          <h3>SELECT PLAN</h3>
+        </div>
+      </div>
+
+      <div class="side-steps">
+        <div class="steps-1"><h2 id="steps-3">3</h2></div>
+        <div class="steps-2">
+          <h4>STEP 3</h4>
+          <h3>ADD-ONS</h3>
+        </div>
+      </div>
+
+      <div class="side-steps">
+        <div class="steps-1"><h2 id="steps-4">4</h2></div>
+        <div class="steps-2">
+          <h4>STEP 4</h4>
+          <h3>SUMMARY</h3>
+        </div>
+      </div>
+
+      <div class="mobile-steps">
+        <h3 id="m-steps-1">1</h3>
+        <h3 id="m-steps-2">2</h3>
+        <h3 id="m-steps-3">3</h3>
+        <h3 id="m-steps-4">4</h3>
+      </div>
+      
+    </div>
+    <!-- Sidebar end -->
+
+    <main>
+      <!-- Step 1 start -->    
+      <div class="container" id="step-1">
+        <div class="steps">
+          <div class="header">
+            <h1>Personal info</h1>
+            <p>Please provide your name, email address, and phone number.</p>
+          </div>
+
+          <div>
+            <div class="input-top">
+              <label for="name">Name</label>
+              <p id="input-name"></p>
+            </div>
+            <input type="text" id="name" class="in-input" name="name" placeholder="e.g. Stephen King">
+          </div>
+
+          <div>
+            <div class="input-top">
+              <label for="email">Email Address</label>
+              <p id="input-email"></p>
+            </div>
+            <input type="email" id="email" class="in-input" name="email" placeholder="e.g. stephenking@lorem.com">
+          </div>
+
+          <div>
+            <div class="input-top">
+              <label for="number">Phone Number</label>
+              <p id="input-number"></p>
+            </div>
+            <input type="number" id="number" class="in-input" name="number" placeholder="e.g. +1 234 567 890">
+          </div>
+        </div>
+
+        <div class="steps button" id="btn-1">
+          <h3 id="back-1"></h3>
+          <h3 class="next" id="next-1">Next Step</h3>
+        </div>
+
+      </div>
+      <!-- Step 1 end -->
+
+      <!-- Step 2 start -->
+      <div class="container" id="step-2">
+        <div class="steps step-2">
+          
+
+          <div class="header">
+            <h1>Select your plan</h1>
+            <p>You have the option of monthly or yearly billing.</p>
+          </div>
+
+          <div class="arcade plan" id="arcade">
+            <img src="design/images/icon-arcade.svg" alt="" srcset="">
+            <div>
+              <h4>Arcade</h4>
+              <h5 id="sub-1">$9/mo</h5>
+              <h5 class="free" id="free1">2 months free</h5>
+            </div>
+          </div>
+
+          <div class="advance plan" id="advance">
+            <img src="design/images/icon-advanced.svg" alt="" srcset="">
+            <div>
+              <h4>Advanced</h4>
+              <h5 id="sub-2">$12/mo</h5>
+              <h5 class="free" id="free2">2 months free</h5>
+            </div>
+          </div>
+
+          <div class="pro plan" id="pro">
+            <img src="design/images/icon-pro.svg" alt="" srcset="">
+            <div>
+              <h4>Pro</h4>
+              <h5 id="sub-3">$15/mo</h5>
+              <h5 class="free" id="free3">2 months free</h5>
+            </div>
+          </div>
+
+          <div class="toggle">
+            <h4 id="monthly">Monthly</h4>
+            <label class="switch">
+              <input type="checkbox" id="switch">
+              <span class="slider round"></span>
+            </label>
+            <h4 id="yearly">Yearly</h4>
+          </div>
+
+        </div>
+
+        <div class="steps button" id="btn-2">
+          <h3 class="back" id="back-2">Go Back</h3>
+          <p id="alert" class="alert">Select a plan</p>
+          <h3 class="next" id="next-2">Next Step</h3>
+        </div>
+
+      </div>
+      <!-- Step 2 end -->
+
+      <!-- Step 3 start --> 
+      <div class="container" id="step-3">
+        <div class="steps">
+
+          <div class="header">
+            <h1>Pick add-ons</h1>
+            <p>Add-ons help enhance your gaming experience.</p>
+          </div>
+
+          <div class="option-box" id="option-box1">
+            <input type="checkbox" class="checkbox" id="checkbox-1">
+            <div>
+              <h5 class="p1">Online Service</h5>
+              <h5 class="p2">Access to multiplayer games</h5>
+            </div>
+            <h5 id="sub1"></h5>
+          </div>
+
+          <div class="option-box" id="option-box2">
+            <input type="checkbox" class="checkbox" id="checkbox-2">
+            <div>
+              <h5 class="p1">Larger Storage</h5>
+              <h5 class="p2">Extra 1TB of cloud save</h5>
+            </div>
+            <h5 id="sub2"></h5>
+          </div>
+
+          <div class="option-box" id="option-box3">
+            <input type="checkbox" class="checkbox" id="checkbox-3">
+            <div>
+              <h5 class="p1">Customizable Profile</h5>
+              <h5 class="p2">Custom theme on your profile</h6>
+            </div>
+            <h5 id="sub3"></h5>
+          </div>
+        </div>
+
+        <div class="steps button" id="btn-3">
+          <h3 class="back" id="back-3">Go Back</h3>
+          <p class="alert" id="alert1">Select a plan</p>
+          <h3 class="next" id="next-3">Next Step</h3>
+        </div>
+
+      </div>
+      <!-- Step 3 end -->
+
+      <!-- Step 4 start -->
+      <div class="container" id="step-4">
+        <div class="steps">
+          <div class="header">
+            <h1>Finishing up</h1>
+            <p>Double-check everything looks Ok before comfirming.</p>
+          </div>
+
+          <table>
+            <tr>
+              <th><div><p id="view"></p><span id="duration"></span></div><a href="#" id="change">change</a></th>
+              <th class="mo-area"><p>$</p><p id="mo-price"></p><p id="mo-time"></p></th>
+            </tr>
+
+            <tr class="line"></tr>
+
+            <tr id="online">
+              <td class="td1">Online service</td>
+              <td class="mo"><p>+$</p><p id="online-price"></p><p id="online-time"></p></td>
+            </tr>
+
+            <tr id="storage">
+              <td class="td1">Larger storage</td>
+              <td class="mo"><p>+$</p><p id="larger-price"></p><p id="larger-time"></p></td>
+            </tr>
+            
+            <tr id="profile">
+              <td class="td1">Customizable profile</td>
+              <td class="mo"><p>+$</p><p id="profile-price"></p><p id="profile-time"></p></td>
+            </tr> 
+          </table>
+
+          
+          <div id="total">
+            <p id="total-month"></p>
+            <div><h3>+$</h3><h3 id="total-pay"></h3><h3 id="total-time"></h3></div>
+          </div>
+          
+        </div>
+
+        <div class="steps button" id="btn-4">
+          <h3 class="back" id="back-4">Go Back</h3>
+          <h3 class="next n1" id="next-4">Confirm</h3>
+        </div>
+
+      </div>
+      <!-- Step 4 end -->
+
+      <!-- Step 5 start -->
+      <div class="steps container" id="final">
+        <img src="design/images/icon-thank-you.svg" alt="" srcset="">
+        <h1>Thank you!</h1>
+        <p>Thanks for confirming your subscription! We hope you have fun 
+          using our platform. If you ever need support, please feel free 
+          to email us at support@loremgaming.com.
+        </p>
+      </div>
+      <!-- Step 5 end -->
+
+    </main>
+
+  </div>
+
+  <div class="attribution" id="link-link">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://twitter.com/iammcbarna">Barnabas Ukagha</a>.
+  </div>
+
+  <script src="script.js "></script>
+
+</body>
+</html>
